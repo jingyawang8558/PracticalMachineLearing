@@ -1,0 +1,40 @@
+---
+output: html_document
+---
+### Course Project of Practical Machine learning
+
+In this study, 6 participants were asked to perform barbell lifts correctly and incorrectly in 5 different ways. The goal is to use data collected from accelerometers on the belt, forearm, arm, and dumbell of the 6 participants to predict their manner of activity
+
+#### Data loading, preprocessing and exploratory analysis   
+First, we loaded the training data and remove the column with mostly NAs.   
+```{r}
+library(caret)
+test<-read.csv("pml-testing1.csv",na.strings=c("NA",""))
+training<-test[21:19642,]
+test<-test[1:20,]
+mostly_data<-apply(!is.na(training),2,sum)>19621
+training<-training[,mostly_data]
+test<-test[,mostly_data]
+dim(training)
+summary(training)
+```   
+We can see that the training dataset contains 19622 observations. After removing the columns with mostly NAs, there are 60 varaibles, including classe, the one to be predicted, which contains 5 classes.   
+#### Fit prediction models using different ways and calcualte the 5-fold cross validation error.   
+Different methods were used to build the prediction model and 5 fold cross validation errors were calculated. Random forest and naive bayes's method were not run because the memory of the computer is not enough.   
+```{r}
+### Prediction tree
+modFit_rpart<-train(classe~.-X,data=training,method="rpart",trControl=trainControl(method="cv",number=5))
+modFit_rpart$results
+### LDA
+modFit_lda<-train(classe~.-X,data=training,method="lda",trControl=trainControl(method="cv",number=5))
+modFit_lda$results
+### Random Forest
+library(randomForest)
+modFit_rf<- randomForest(classe~.-X, data=training)
+modFit_rf
+```   
+### Apply random forest to test data
+From above, we see that random forest gives the best cross validation error, so we apply this method to the test dataset
+```{r}
+predict(modFit_rf, test)
+```   

@@ -1,0 +1,512 @@
+newdata<-data.frame(wt=3)
+predict(fit, newdata, interval="predict")
+newdata<-data.frame(x=3)
+predict(fit, newdata, interval="predict")
+newdata<-data.frame(wt=mean(x))
+predict(fit, newdata, interval="predict")
+newdata<-data.frame(x=mean(x))
+predict(fit, newdata, interval="predict")
+fit<-lm(y~x)
+mean(x)
+newdata<-data.frame(x=3.21725
+)
+predict(fit, newdata, interval="predict")
+predict(fit, newdata, interval="confidence")
+qt(0.95,8)
+1100+c(1,-1)*30*1.859548
+1100+c(1,-1)*30*qt(0.975,8)
+2/qt(0.975,8)
+qt(.975,8)
+2/2.3
+1100+c(1,-1)*30*qt(0.975,8)/3
+6/2.3
+3-5
+(9*.6+9*.68)/18
+3-5+c(1,-1)*qt(.975,18)*sqrt(.64)*(sqrt(1.5))
+3-5+c(1,-1)*qt(.975,18)*sqrt(.64)*(sqrt(1/5))
+s<-(8*1.5^2+8*1.8^2)/16
+s
+-3-1+c(-1,1)*qt(.95,16)*sqrt(s)*sqrt(2/9)
+for (i in 1 : 1000) mns = c(mns, mean(rexp(n=40,lambda=0.2)))
+set.seed(8558)
+mns = NULL
+for (i in 1 : 1000) mns = c(mns, mean(rexp(n=40,lambda=0.2)))
+?rexp
+for (i in 1 : 1000) mns = c(mns, mean(rexp(n=40,rate=0.2)))
+hist(mns)
+abline(v=mean(mns),col="black")
+abline(v=5,col="red")
+hist(mns)
+abline(v=mean(mns),col="blue",lwd=2)
+abline(v=mean(mns),col="blue",lwd=4)
+hist(mns)
+abline(v=mean(mns),col="blue",lwd=4)
+abline(v=5,col="red",lwd=4)
+set.seed(8558)
+mns = NULL
+lambda=0.2
+for (i in 1 : 1000) mns = c(mns, mean(rexp(n=40,rate=lambda)))
+hist(mns)
+means(mns)
+mean(mns)
+1/lambda
+means(mns)-1/lambda
+mean(mns)-1/lambda
+abline(v=mean(mns),col="blue",lwd=4)
+abline(v=5,col="red",lwd=4)
+set.seed(8558)
+mns = NULL
+var = NULL
+lambda=0.2
+for (i in 1 : 1000) mns = c(mns, mean(rexp(n=40,rate=lambda)))
+for (i in 1 : 1000) var = c(var, var(rexp(n=40,rate=lambda)))
+hist(var)
+mean(var)
+1/lambda
+(1/lambda)^2
+mean(var)-(1/lambda)^2
+abline(v=mean(var),col="blue",lwd=4)
+abline(v=25,col="red",lwd=4)
+cumsum
+?cumsum
+n <- 1000
+means <- cumsum(mns/(1:n)
+)
+library(ggplot2)
+g <- ggplot(data.frame(x = 1:n, y = means), aes(x = x, y = y))
+g <- g + geom_hline(yintercept = 0) + geom_line(size = 2)
+g <- g + labs(x = "Number of obs", y = "Cumulative mean")
+g
+set.seed(8558)
+dat = NULL
+lambda=0.2
+for (i in 1 : 1000) dat = c(mns, rexp(n=40,rate=lambda))
+n <- 1000
+means <- cumsum(dat/(1:n))
+set.seed(8558)
+dat = NULL
+lambda=0.2
+for (i in 1 : 1000) dat = c(dat, rexp(n=40,rate=lambda))
+n <- 1000
+means <- cumsum(dat/(1:n))
+library(ggplot2)
+g <- ggplot(data.frame(x = 1:n, y = means), aes(x = x, y = y))
+g <- g + geom_hline(yintercept = 0) + geom_line(size = 2)
+g <- g + labs(x = "Number of obs", y = "Cumulative mean")
+g
+meand[1:10]
+means[1:10]
+n <- 1000
+means <- cumsum(dat/(1:n))
+library(ggplot2)
+g <- ggplot(data.frame(x = 1:n, y = means), aes(x = x, y = y))
+g <- g + geom_hline(yintercept = 5) + geom_line(size = 1)
+g <- g + labs(x = "Number of obs", y = "Cumulative mean")
+g
+set.seed(8558)
+mns = NULL
+var = NULL
+lambda=0.2
+for (i in 1 : 1000) mns = c(mns, mean(rexp(n=40,rate=lambda)))
+for (i in 1 : 1000) var = c(var, var(rexp(n=40,rate=lambda)))
+set.seed(8558)
+mns = NULL
+var = NULL
+lambda=0.2
+for (i in 1 : 1000) mns = c(mns, mean(rexp(n=40,rate=lambda)))
+for (i in 1 : 1000) var = c(var, var(rexp(n=40,rate=lambda)))
+hist(mns)
+mean(mns)
+1/lambda
+mean(mns)-1/lambda
+abline(v=mean(mns),col="blue",lwd=4)
+abline(v=5,col="red",lwd=4)
+hist(var)
+mean(var)
+(1/lambda)^2
+mean(var)-(1/lambda)^2
+abline(v=mean(var),col="blue",lwd=4)
+abline(v=25,col="red",lwd=4)
+```
+hist(rexp(n=40,rate=lambda))
+hist(mns)
+hx <- dnorm(x,2)
+x <- seq(2, 9, length=100)
+hx <- dnorm(x,2)
+plot(x, hx, type="l", lty=2, xlab="x value",
+ylab="Density", main="Comparison of t Distributions")
+x <- seq(0, 10, length=100)
+hx <- dnorm(x,2)
+plot(x, hx, type="l", lty=2, xlab="x value",
+ylab="Density", main="Comparison of t Distributions")
+x <- seq(0, 10, length=100)
+hx <- dnorm(x,2,2)
+plot(x, hx, type="l", lty=2, xlab="x value",
+ylab="Density", main="Comparison of t Distributions")
+x <- seq(0, 10, length=100)
+hx <- dnorm(x,5,5)
+plot(x, hx, type="l", lty=2, xlab="x value",
+ylab="Density", main="Comparison of t Distributions")
+x<-seq(0,10)
+x<-seq(0,10,length=1000)
+x<-seq(0,10,length=1000)
+hx<-dnorm(x,5,5)
+plot(x,hx)
+x<-seq(-10,20,length=1000)
+hx<-dnorm(x,5,5)
+plot(x,hx)
+hist(mns)
+points(x,hx)
+hist
+?hist
+hist(rexp(n=40,rate=lambda),pin=c(2,2))
+par(mfrows=c(1,2))
+par(mfrow=c(1,2))
+hist(rexp(n=40,rate=lambda),pin=c(2,2))
+hist(mns)
+par(mfrow=c(1,2))
+hist(rexp(n=40,rate=lambda))
+hist(mns)
+hist(var)
+par(mfrow=c(1,2))
+hist(rexp(n=1000,rate=lambda),main="Distribution of random exponentials",xlab="Value")
+hist(mns,main="Distribution of average of random exponentials",xlab="Value")
+hist(rexp(n=1000,rate=lambda),main="Random exponentials",xlab="Value")
+hist(mns,main="Average of random exponentials",xlab="Value")
+par(mfrow=c(1,2))
+hist(rexp(n=1000,rate=lambda),main="Random exponentials",xlab="Value",cex.main=1)
+data<-load(ToothGrowth)
+library(ToothGrowth)
+data(ToothGrowth)
+data(ToothGrowth)
+str(ToothGrowth)
+data(ToothGrowth); str(ToothGrowth)
+table(ToothGrowth$supp); table(ToothGrowth$dose)
+table(ToothGrowth$supp,ToothGrowth$dose)
+ToothGrowth$dose <-as.factor(ToothGrowth$dose)
+library("lattice")
+bwplot(len ~ dose | supp,data=ToothGrowth)
+```{r,fig.width = 6, fig.height = 3}
+ToothGrowth$dose <-as.factor(ToothGrowth$dose)
+library("lattice")
+par(mfrow=c(1,2))
+bwplot(len ~ dose | supp,data=ToothGrowth)
+library("lattice")
+par(mfrow=c(1,2))
+bwplot(len ~ dose | supp,data=ToothGrowth,xlab="Dose")
+bwplot(len ~ dose | supp,data=ToothGrowth,xlab="Dose (milligram)",ylab="Tooth Length")
+library("lattice")
+attach(ToothGrowth)
+aggregate(len,list(dose,supp),FUN=function(x) c(x_mean = mean(x), x_sd = sd(x)))
+library("lattice")
+attach(ToothGrowth)
+aggregate(len,list(dose,supp),FUN=function(x) c(Mean = mean(x), SD = sd(x)))
+head(data)
+head(ToothGrowth)
+dat_0.5<-ToothGrowth[ToothGrowth$dose=="0.5",];t.test(len~supp)
+dat_0.5<-ToothGrowth[ToothGrowth$dose=="0.5",];t.test(len~supp,data=dat_0.5)
+dat_0.5<-ToothGrowth[ToothGrowth$dose=="0.5",];t.test(len~supp,data=dat_0.5,var.equal=FALSE)
+summary(t.test(len~supp,data=dat_0.5,var.equal=FALSE))
+dat_0.5<-ToothGrowth[ToothGrowth$dose=="0.5",];t_0.5<-t.test(len~supp,data=dat_0.5,var.equal=FALSE)
+dat_1<-ToothGrowth[ToothGrowth$dose=="1",];t_1<-t.test(len~supp,data=dat_1,var.equal=FALSE)
+dat_2<-ToothGrowth[ToothGrowth$dose=="2",];t_2<-t.test(len~supp,data=dat_2,var.equal=FALSE)
+bwplot(len ~ supp | dose,data=ToothGrowth,xlab="Dose (milligram)",ylab="Tooth Length")
+```{r}
+data(ToothGrowth); str(ToothGrowth)
+table(ToothGrowth$supp); table(ToothGrowth$dose)
+table(ToothGrowth$supp,ToothGrowth$dose)
+ToothGrowth$dose <-as.factor(ToothGrowth$dose)
+library("lattice")
+par(mfrow=c(2,2))
+bwplot(len ~ dose | supp,data=ToothGrowth,xlab="Dose (milligram)",ylab="Tooth Length")
+bwplot(len ~ supp | dose,data=ToothGrowth,xlab="Dose (milligram)",ylab="Tooth Length")
+par(mfrow=c(2,1))
+bwplot(len ~ dose | supp,data=ToothGrowth,xlab="Dose (milligram)",ylab="Tooth Length")
+bwplot(len ~ supp | dose,data=ToothGrowth,xlab="Dose (milligram)",ylab="Tooth Length")
+bwplot(len ~ dose | supp,data=ToothGrowth,xlab="Dose (milligram)",ylab="Tooth Length")
+bwplot(len ~ supp | dose,data=ToothGrowth,xlab="Dose (milligram)",ylab="Tooth Length")
+bwplot(len ~ dose | supp,data=ToothGrowth,xlab="Dose (milligram)",ylab="Tooth Length")
+bwplot(len ~ supp | dose,data=ToothGrowth,xlab="Dose (milligram)",ylab="Tooth Length")
+dev.off()
+library("lattice")
+attach(ToothGrowth)
+aggregate(len,list(dose,supp),FUN=function(x) c(Mean = mean(x), SD = sd(x)))
+dat_0.5<-ToothGrowth[ToothGrowth$dose=="0.5",];t_0.5<-t.test(len~supp,data=dat_0.5,var.equal=FALSE)
+dat_0.5
+dat_1<-ToothGrowth[ToothGrowth$dose=="1",];t_1<-t.test(len~supp,data=dat_1,var.equal=FALSE)
+dat_2<-ToothGrowth[ToothGrowth$dose=="2",];t_2<-t.test(len~supp,data=dat_2,var.equal=FALSE)
+data.frame("Dose"=c("0.5","1","2"), "Comparison"=c("OJvs.VC","OJvs.VC","OJvs.VC"),"p-value"=c(t_0.5$p.value, t_1$p.value,t_2$p.value),"Conf-Low"=c(t_0.5$conf[1],t_1$conf[1],t_2$conf[1]),"Conf-High"=c(t_0.5$conf[2],t_1$conf[2],t_2$conf[2]))
+data.frame("Dose"=c("0.5","1","2"), "Comparison"=c("VC vs. OJ","VC vs. OJ","VC vs. OJ"),"p-value"=c(t_0.5$p.value, t_1$p.value,t_2$p.value),"Conf-Low"=c(t_0.5$conf[1],t_1$conf[1],t_2$conf[1]),"Conf-High"=c(t_0.5$conf[2],t_1$conf[2],t_2$conf[2]))
+dat_OJ<-ToothGrowth[ToothGrowth$supp=="OJ",];
+dat_OJ1<-dat_OJ[dat_OJ$dose=="0.5"|dat_OJ$dose=="1",];
+t_OJ1<-t.test(len~dose,data=dat_OJ1,var.equal=FALSE)
+dat_OJ2<-dat_OJ[dat_OJ$dose=="1"|dat_OJ$dose=="2",];
+t_OJ2<-t.test(len~dose,data=dat_OJ2,var.equal=FALSE)
+dat_VC<-ToothGrowth[ToothGrowth$supp=="VC",];
+dat_VC1<-dat_VC[dat_VC$dose=="0.5"|dat_VC$dose=="1",];
+t_VC1<-t.test(len~dose,data=dat_VC1,var.equal=FALSE)
+dat_VC2<-dat_VC[dat_VC$dose=="1"|dat_VC$dose=="2",];
+t_VC2<-t.test(len~dose,data=dat_VC2,var.equal=FALSE)
+data.frame("Supp"=c("OJ","OJ","VC","VC"), "Comparison"=c("0.5vs.1","1vs.2","0.5vs.1","1vs.2"),"p-value"=c(t_OJ1$p.value, t_OJ2$p.value,t_VC1$p.value,t_VC2$p.value),"Conf-Low"=c(t_OJ1$conf[1],t_OJ2$conf[1],t_VC1$conf[1],t_VC2$conf[1]),"Conf-High"=c(t_OJ1$conf[2],t_OJ2$conf[2],t_VC1$conf[2],t_VC2$conf[2])
+)
+bwplot(len ~ dose | supp,data=ToothGrowth,xlab="Dose (milligram)",ylab="Tooth Length")
+bwplot(len ~ supp | dose,data=ToothGrowth,xlab="Dose (milligram)",ylab="Tooth Length")
+data.frame("Dose"=c("0.5","1","2"), "Comparison"=c("VC vs. OJ","VC vs. OJ","VC vs. OJ"),"p-value"=c(t_0.5$p.value, t_1$p.value,t_2$p.value),"Conf-Low"=c(t_0.5$conf[1],t_1$conf[1],t_2$conf[1]),"Conf-High"=c(t_0.5$conf[2],t_1$conf[2],t_2$conf[2]))
+bwplot(len ~ dose | supp,data=ToothGrowth,xlab="Dose (milligram)",ylab="Tooth Length")
+data.frame("Supp"=c("OJ","OJ","VC","VC"), "Comparison"=c("0.5vs.1","1vs.2","0.5vs.1","1vs.2"),"p-value"=c(t_OJ1$p.value, t_OJ2$p.value,t_VC1$p.value,t_VC2$p.value),"Conf-Low"=c(t_OJ1$conf[1],t_OJ2$conf[1],t_VC1$conf[1],t_VC2$conf[1]),"Conf-High"=c(t_OJ1$conf[2],t_OJ2$conf[2],t_VC1$conf[2],t_VC2$conf[2]))
+ToothGrowth$dose <-as.factor(ToothGrowth$dose); library("lattice"); par(mfrow=c(2,1))
+bwplot(len ~ dose | supp,data=ToothGrowth,xlab="Dose (milligram)",ylab="Tooth Length")
+bwplot(len ~ supp | dose,data=ToothGrowth,xlab="Dose (milligram)",ylab="Tooth Length")
+sum<-aggregate(len,list(dose,supp),FUN=function(x) c(Mean = mean(x), SD = sd(x)))
+sum
+names(sum)=c("Dose","Supp","Mean_Tooth length","SD_Tooth length")
+names(sum)
+names(sum)=c("Dose","Supp","Tooth length")
+sum
+data(mtcars); str(mtcars)
+bwplot(mpg ~ am, data=mtcars,xlab="Transmission (0:automatic; 1:manual)",ylab="MPG (Miles/(US) gallon)",main="Distribution of MPG")
+plot(mpg ~ am, data=mtcars,xlab="Transmission (0:automatic; 1:manual)",ylab="MPG (Miles/(US) gallon)",main="Distribution of MPG")
+plot(mpg ~ as.factor(am), data=mtcars,xlab="Transmission (0:automatic; 1:manual)",ylab="MPG (Miles/(US) gallon)",main="Distribution of MPG")
+dev.off()
+plot(mpg ~ as.factor(am), data=mtcars,xlab="Transmission (0:automatic; 1:manual)",ylab="MPG (Miles/(US) gallon)",main="Distribution of MPG")
+```{r,fig.width = 6, fig.height = 3}
+plot(mpg~.,data=mtcars)
+pairs(mtcars)
+plot(mpg~cyl,data=mtcars)
+par(mfrow=c(4,3))
+plot(mpg~cyl,data=mtcars)
+```{r,fig.width = 10, fig.height = 10}
+par(mfrow=c(4,3))
+plot(mpg~cyl,data=mtcars)
+plot(mpg~cyl,data=mtcars);plot(mpg~disp,data=mtcars)
+paris(mtcars)
+pairs(mtcars)
+pairs(mtcars)
+plot(mpg ~ as.factor(am), data=mtcars,xlab="Transmission (0:automatic; 1:manual)",ylab="MPG (Miles/(US) gallon)",main="Distribution of MPG")
+lm(mpg~.,data=mtcars)
+summary(fit)
+fit<-lm(mpg~.,data=mtcars)
+summary(fit)
+data(mtcars); str(mtcars)
+mtcars$am<- as.factor(mtcars$am); mtcars$cyl<- as.factor(mtcars$cyl)
+mtcars$vs<- as.factor(mtcars$vs); mtcars$gear<- as.factor(mtcars$gear)
+fit<-lm(mpg~.,data=mtcars)
+summary(fit)
+fit1<-lm(mpg~am,data=mtcars); fit2<-lm(mpg~am+hp+wt,data=mtcars)
+summary(fit1); summary(fit2)
+```
+t.test(mpg~am,data=mtcars)
+fit1<-lm(mpg~am,data=mtcars); fit2<-lm(mpg~am+hp+wt,data=mtcars)
+summary(fit1); summary(fit2)
+par(mfrow=c(1,2))
+plot(fitted(fit1), resid(fit1)); abline(h=0)
+plot(fitted(fit2), resid(fit2));abline(h=0)
+plot(fit1,main="Diagnostic of Fit1")
+par(mfrow=c(2,2))
+plot(fit1,main="Diagnostic of Fit1")
+plot(fit2,main="Diagnostic of Fit2")
+plot(fit1,main="Diagnostic of Fit1")
+plot(fit2,main="Diagnostic of Fit2")
+par(mfrow=c(2,2),main="Diagnostic of Fit1")
+plot(fit1,main="Diagnostic of Fit1")
+plot(fit2,main="Diagnostic of Fit2")
+plot(fitted(fit1), resid(fit1)); abline(h=0)
+plot(fitted(fit2), resid(fit2));abline(h=0)
+fit1<-lm(mpg~am,data=mtcars); fit2<-lm(mpg~am+hp+wt,data=mtcars)
+summary(fit1); summary(fit2)
+t.test(mpg~am,data=mtcars)
+?t.test
+?lm
+fit<-lm(mpg~.,data=mtcars); summary(fit)$coefficients
+data.frame("p value"=t.test(mpg~am,data=mtcars)$p.value, "Upper 95% CI"=t.test(mpg~am,data=mtcars)$conf.int[1],"Lower 95% CI"=t.test(mpg~am,data=mtcars)$conf.int[2])
+data(mtcars)
+fit<-lm(mpg~cyl,data=mtcars)
+summary(fit)
+summary(mtcars)
+fit<-lm(mpg~as.factor(cyl),data=mtcars)
+summary(fit)
+fit<-lm(mpg~as.factor(cyl)+wt,data=mtcars)
+summary(fit)
+fit<-lm(mpg~as.factor(cyl)+wt,data=mtcars)
+summary(fit)
+fit2<-lm(mpg~as.factor(cyl),data=mtcars)
+summary(fit2)
+fit<-lm(mpg~as.factor(cyl)+wt+as.factor(cyl)*wt,data=mtcars)
+summary(fit)
+lm(mpg ~ I(wt * 0.5) + factor(cyl), data = mtcars)
+x <- c(0.586, 0.166, -0.042, -0.614, 11.72)
+y <- c(0.549, -0.026, -0.127, -0.751, 1.344)
+lm(y~x)
+round(hatvalues(fit)[1:5],3)
+fit<-lm(y~x)
+round(hatvalues(fit)[1:5],3)
+x <- c(0.586, 0.166, -0.042, -0.614, 11.72)
+y <- c(0.549, -0.026, -0.127, -0.751, 1.344)
+fit<-lm(y~x)
+round(dfbetas(fit)[1:5,2],3)
+x<-c(132-140,135-138,1,-2,-5)
+t.test(x,0)
+?t.test
+t.test(x,mu=0)
+qt(0.025,9)
+qt(0.025,8)
+qt(0.975,8)
+1100+c(1,-1)*2.306004*30
+0.5^4+0.5^4
+?ppois
+ppois(10/1787,0.1)
+1-ppois(10/1787,0.1)
+1-ppois(10/1787,0.01)
+ppois(10/1787,0.01)
+10/1787
+ppois(9/1787,0.01,lower.tail=FALSE)
+power.t.test(delta = 0.01, sd = 0.04, sig.level = 0.05,
+power = 0.9)
+power.t.test(delta = 0.01, sd = 0.04, sig.level = 0.05,
+power = 0.9,alternative = "one.sided")
+power.t.test(delta = 0.01, sd = 0.04, sig.level = 0.05,alternative = "one.sided")
+power.t.test(delta = 0.01, sd = 0.04, sig.level = 0.05,power=0.9,alternative = "one.sided",type="paired")
+1100+c(1,-1)*30*qt(0.025,9)
+1100+c(1,-1)*30*qt(0.025,8)
+ppois(9/1787,0.01,lower.tail=TRUE)
+9/1787
+ppois(9/1787,0.01)
+ppois(9, 5, lower.tail = FALSE)
+ppois(0.09, 0.05, lower.tail = FALSE)
+ppois(9,0.01*1787)
+ppois(9,0.01*1787,lower.tail=FALSE)
+ppois(10,0.01*1787)
+?t.test
+1100+c(1,-1)*10*qt(0.025,9)
+pbiom(2,4,0.5)
+pbion(2,4,0.5)
+pbinom(2,4,0.5)
+power.t.test(delta = 0.01, sd = 0.04/10, sig.level = 0.05,power=0.9,alternative = "one.sided",type="paired")
+power.t.test(n = NULL, delta = NULL, sd = 1, sig.level = 0.05,
+power.t.test(delta = 0.01, sd = 0.04/10,n=100,sig.level = 0.05,alternative = "one.sided",type="paired")
+)
+power.t.test(delta = 0.01, sd = 0.04/10,n=100,sig.level = 0.05,alternative = "one.sided",type="paired")
+power.t.test(delta = 0.01, sd = 0.04/10,n=100,sig.level = 0.05,alternative = "one.sided")
+power.t.test(delta = 0.01, sd = 0.04,n=100,sig.level = 0.05,alternative = "one.sided")
+power.t.test(delta = 0.01, sd = 0.04,n=100,sig.level = 0.05,alternative = "one.sided",type="paired")
+power.t.test(delta = 0.01, sd = 0.04,n=100,sig.level = 0.05,alternative = "one.sided",type="one.sample")
+library(MASS)
+data(shuttle)
+head(shuttle)
+lm<-lm(sign~use,data=shuttle)
+lm(sign~use,data=shuttle)
+lm(as.factor(sign)~as.factor(use),data=shuttle)
+lm(as.factor(use)~as.factor(sign),data=shuttle)
+lm(as.factor(use)~as.factor(sign)+as.factor(magn),data=shuttle)
+as.factor(shuttle$sign,levels=c("head","tail"))
+?as.factor
+as.factor(shuttle$wind,levels=c("head","tail"))
+table(shuttle$wind)
+as.factor(shuttle$wind)
+levels(shuttle$wind)
+levels(shuttle$wind)=c("tail","head")
+levels(shuttle$wind)
+sum(shuttle$wind[1:3])
+head(shuttle)
+shuttle$wind1<-shuttle$wind="head"
+shuttle$wind1<-shuttle$wind=="head"
+shuttle$use1<-shuttle$auto=="auto"
+shuttle$use1<-shuttle$use=="auto"
+head(shuttle)
+lm(use1~wind1,data=shuttle)
+lm<=lm(use1~wind1,data=shuttle)
+lm<-lm(use1~wind1,data=shuttle)
+summary(lm)$coef
+levels(shuttle$use)
+levels(shuttle$wind)
+data(shuttle)
+levels(shuttle$use)
+levels(shuttle$wind)
+lm<-lm(use~wind,data=shuttle)
+summary(lm)$coef
+lm<-lm(use~wind,data=shuttle,family="binomial")
+lm<-glm(use~wind,data=shuttle,family="binomial")
+lm
+levels(shuttle$wind)=c("tail","head")
+lm<-glm(use~wind,data=shuttle,family="binomial")
+lm
+data(shuttle)
+head(shuttle)
+shuttle$use<-as.factor(shuttle$use, levels=c("noauto","auto"))
+levels(shuttle$use)=c("noauto","auto")
+levels(shuttle$wind)=c("tail","head")
+lm<-glm(use~wind,data=shuttle,family="binomial")
+lm
+lm<-glm(use~wind+magn,data=shuttle,family="binomial")
+lm
+lm<-glm(use~wind+magn,data=shuttle)
+lm
+lm<-glm(1-use~wind,data=shuttle,family="binomial")
+lm<-glm(1-shuttle$use~wind,data=shuttle,family="binomial")
+lm
+lm<-glm(use~wind*magn,data=shuttle)
+lm<-glm(use~wind*magn,data=shuttle,family="binormial")
+lm<-glm(use~wind*magn,data=shuttle,family="binomial")
+lm
+data(InsectSprays)
+head(InsectSprays)
+glm1<-glm(InsectSprays$count~InsectSprays$spray,family="poisson")
+glm1
+0.99/(0.99+9.99)
+install.packages("caret")
+install.packages("AppliedPredictiveModeling")
+library(AppliedPredictiveModeling)
+data(concrete)
+library(caret)
+set.seed(975)
+inTrain = createDataPartition(mixtures$CompressiveStrength, p = 3/4)[[1]]
+training = mixtures[ inTrain,]
+testing = mixtures[-inTrain,]
+summary(training)
+hist(Superplasticizer,data=training)
+hist(training$Superplasticizer)
+hist(log10(training$Superplasticizer))
+hist(log10(training$Superplasticizer+1))
+library(caret)
+library(AppliedPredictiveModeling)
+set.seed(3433)
+data(AlzheimerDisease)
+adData = data.frame(diagnosis,predictors)
+inTrain = createDataPartition(adData$diagnosis, p = 3/4)[[1]]
+training = adData[ inTrain,]
+testing = adData[-inTrain,]
+summay(training)
+summary(training)
+names<-colnames(training)
+names
+grep("IL",names)
+grep("^IL",names)
+names[grep("^IL",names)]
+training1<-subset(training, select=names[grep("^IL",names)])
+dim(training1)
+proProc<-preProcess(training1,method="pca")
+summay(proProc)
+summary(proProc)
+?preProcess
+cumsum((proProc$std)^2) / sum(pproProcca1$std^2)
+cumsum((proProc$std)^2) / sum(proProc$std^2)
+(proProc$std)^2) / sum(proProc$std^2
+(proProc$std)^2 / sum(proProc$std^2)
+proProc
+setwd("~/Documents/Coursera/Practical Machine Learning")
+library(caret)
+training<-read.csv("pml-training.csv",na.strings=c("NA",""))
+test<-read.csv("pml-testing.csv",na.strings=c("NA",""))
+mostly_data<-apply(!is.na(training),2,sum)>19621
+training<-training[,mostly_data]
+test<-test[,mostly_data]
+dim(training)
+summary(training)
+modFit_rf<-train(classe~.,data=training,method="rpart",trControl=trainControl(method="cv",number=5))
+modFit_rf$results
+modFit_rpart$results
+modFit_rf$results
+install.packages("randomForest")
+modFit_rf<-train(classe~.,data=training,method="rf",trControl=trainControl(method="cv",number=5),prox=TRUE)
+modFit_rf<-train(classe~.,data=training,method="rf",prox=TRUE)
+modFit_rpart<-train(classe~.,data=training,method="rpart",trControl=trainControl(method="cv",number=5))
