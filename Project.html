@@ -213,10 +213,10 @@ dim(training)</code></pre>
 modFit_rpart&lt;-train(classe~.-X,data=training,method=&quot;rpart&quot;,trControl=trainControl(method=&quot;cv&quot;,number=5))</code></pre>
 <pre><code>## Loading required package: rpart</code></pre>
 <pre class="r"><code>modFit_rpart$results</code></pre>
-<pre><code>##           cp  Accuracy      Kappa AccuracySD   KappaSD
-## 1 0.04023643 0.4925466 0.34654237 0.07609562 0.1290661
-## 2 0.04567251 0.4293091 0.24497852 0.05856647 0.1117960
-## 3 0.11515454 0.3497120 0.09965041 0.03655447 0.0557236</code></pre>
+<pre><code>##           cp  Accuracy      Kappa AccuracySD    KappaSD
+## 1 0.04023643 0.4568395 0.28616156 0.08701879 0.15162564
+## 2 0.04567251 0.4313015 0.24752890 0.06232334 0.11668790
+## 3 0.11515454 0.3494997 0.09941142 0.03636327 0.05560225</code></pre>
 <pre class="r"><code>### LDA
 modFit_lda&lt;-train(classe~.-X,data=training,method=&quot;lda&quot;,trControl=trainControl(method=&quot;cv&quot;,number=5))</code></pre>
 <pre><code>## Loading required package: MASS</code></pre>
@@ -228,7 +228,7 @@ modFit_lda&lt;-train(classe~.-X,data=training,method=&quot;lda&quot;,trControl=t
 <pre><code>## Warning in lda.default(x, grouping, ...): variables are collinear</code></pre>
 <pre class="r"><code>modFit_lda$results</code></pre>
 <pre><code>##   parameter  Accuracy     Kappa  AccuracySD     KappaSD
-## 1      none 0.8549076 0.8165898 0.005670367 0.007276134</code></pre>
+## 1      none 0.8543981 0.8159442 0.006342897 0.007950126</code></pre>
 <pre class="r"><code>### Random Forest
 library(randomForest)</code></pre>
 <pre><code>## Warning: package 'randomForest' was built under R version 3.1.3</code></pre>
@@ -246,21 +246,18 @@ modFit_rf</code></pre>
 ##         OOB estimate of  error rate: 0.06%
 ## Confusion matrix:
 ##      A    B    C    D    E  class.error
-## A 5579    1    0    0    0 0.0001792115
+## A 5580    0    0    0    0 0.0000000000
 ## B    2 3795    0    0    0 0.0005267316
-## C    0    4 3417    1    0 0.0014611338
+## C    0    4 3416    2    0 0.0017533606
 ## D    0    0    2 3213    1 0.0009328358
 ## E    0    0    0    1 3606 0.0002772387</code></pre>
-</div>
-</div>
-<div id="apply-random-forest-to-test-data" class="section level3">
-<h3>Apply random forest to test data</h3>
-<p>From above, the accuracy of the three methods are 0.46, 0.85 and 0.99.<br />We see that random forest gives the best cross validation error, so we apply this method to the test dataset</p>
+<p>From above, the accuracy of the three methods are 0.46, 0.85 and 0.99. So the error rate is 0.54 for predictive tree, 0.15 for LDA and 0.01 for Random forest.<br />#### Apply random forest to test data<br />We see that random forest gives the best cross validation error, so we apply this method to the test dataset</p>
 <pre class="r"><code>predict(modFit_rf, test)</code></pre>
 <pre><code>##  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 
 ##  B  A  B  A  A  E  D  B  A  A  B  C  B  A  E  E  A  B  B  B 
 ## Levels: A B C D E</code></pre>
-<p>The predicted classes are: B A B A A E D B A A B C B A E E A B B B</p>
+<p>The predicted classes are: B A B A A E D B A A B C B A E E A B B B<br />The expected error rate should be similar 0.01</p>
+</div>
 </div>
 
 
