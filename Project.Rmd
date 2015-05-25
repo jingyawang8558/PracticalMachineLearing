@@ -34,7 +34,9 @@ modFit_rf<- randomForest(classe~.-X, data=training)
 modFit_rf
 ```   
 ### Apply random forest to test data
-From above, we see that random forest gives the best cross validation error, so we apply this method to the test dataset
+From above, the accuracy of the three methods are 0.46, 0.85 and 0.99.   
+We see that random forest gives the best cross validation error, so we apply this method to the test dataset
 ```{r}
 predict(modFit_rf, test)
 ```   
+The predicted classes are: B  A  B  A  A  E  D  B  A  A  B  C  B  A  E  E  A  B  B  B  
