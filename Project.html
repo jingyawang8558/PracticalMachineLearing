@@ -214,9 +214,9 @@ modFit_rpart&lt;-train(classe~.-X,data=training,method=&quot;rpart&quot;,trContr
 <pre><code>## Loading required package: rpart</code></pre>
 <pre class="r"><code>modFit_rpart$results</code></pre>
 <pre><code>##           cp  Accuracy      Kappa AccuracySD    KappaSD
-## 1 0.04023643 0.4700911 0.30195434 0.09987809 0.16670304
-## 2 0.04567251 0.4172476 0.22066895 0.07165347 0.13409469
-## 3 0.11515454 0.3494999 0.09933749 0.03639109 0.05560785</code></pre>
+## 1 0.04023643 0.4620390 0.29270764 0.09180249 0.15576780
+## 2 0.04567251 0.4012965 0.18097320 0.07916114 0.12702856
+## 3 0.11515454 0.3156693 0.04768445 0.04294235 0.06538967</code></pre>
 <pre class="r"><code>### LDA
 modFit_lda&lt;-train(classe~.-X,data=training,method=&quot;lda&quot;,trControl=trainControl(method=&quot;cv&quot;,number=5))</code></pre>
 <pre><code>## Loading required package: MASS</code></pre>
@@ -227,10 +227,11 @@ modFit_lda&lt;-train(classe~.-X,data=training,method=&quot;lda&quot;,trControl=t
 <pre><code>## Warning in lda.default(x, grouping, ...): variables are collinear</code></pre>
 <pre><code>## Warning in lda.default(x, grouping, ...): variables are collinear</code></pre>
 <pre class="r"><code>modFit_lda$results</code></pre>
-<pre><code>##   parameter Accuracy     Kappa  AccuracySD    KappaSD
-## 1      none 0.853582 0.8149134 0.004448469 0.00562265</code></pre>
+<pre><code>##   parameter  Accuracy     Kappa AccuracySD     KappaSD
+## 1      none 0.8549588 0.8166504 0.00441337 0.005591304</code></pre>
 <pre class="r"><code>### Random Forest
 library(randomForest)</code></pre>
+<pre><code>## Warning: package 'randomForest' was built under R version 3.1.3</code></pre>
 <pre><code>## randomForest 4.6-10
 ## Type rfNews() to see new features/changes/bug fixes.</code></pre>
 <pre class="r"><code>modFit_rf&lt;- randomForest(classe~.-X, data=training)
@@ -245,11 +246,11 @@ modFit_rf</code></pre>
 ##         OOB estimate of  error rate: 0.06%
 ## Confusion matrix:
 ##      A    B    C    D    E  class.error
-## A 5580    0    0    0    0 0.0000000000
-## B    2 3795    0    0    0 0.0005267316
-## C    0    4 3415    3    0 0.0020455874
+## A 5579    1    0    0    0 0.0001792115
+## B    1 3796    0    0    0 0.0002633658
+## C    0    4 3417    1    0 0.0014611338
 ## D    0    0    2 3213    1 0.0009328358
-## E    0    0    0    0 3607 0.0000000000</code></pre>
+## E    0    0    0    1 3606 0.0002772387</code></pre>
 </div>
 </div>
 <div id="apply-random-forest-to-test-data" class="section level3">
